@@ -28,6 +28,6 @@ public class Cidades {
     private String cidades_nome;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
-    @Size (max = 30) //limita tamanho máximo de caracteres
-    private String pais;
+    @Size (max = 2) //limita tamanho máximo de caracteres
+    private String estado;
 }
