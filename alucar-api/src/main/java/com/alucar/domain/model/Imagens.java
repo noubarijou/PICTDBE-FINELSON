@@ -32,8 +32,8 @@ public class Imagens {
     @Size (max = 500)
     private String url_imagem;
 
-    @OneToMany(mappedBy = "imagens", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("imagens")
-    @ToString.Exclude
-    private Set<Carro> carros = new HashSet<>();
+//    @OneToMany(mappedBy = "imagens", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JsonIgnoreProperties("imagens")
+//    @ToString.Exclude
+//    private Set<Carro> carros = new HashSet<>();
 }

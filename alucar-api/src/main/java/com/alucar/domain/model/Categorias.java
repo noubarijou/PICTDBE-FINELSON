@@ -37,8 +37,8 @@ public class Categorias {
     @Size(max = 500) //limita tamanho máximo de caracteres
     private String descricao;
 
-    @OneToMany(mappedBy = "categorias", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("categorias")
-    @ToString.Exclude
-    private Set<Carro> carros = new HashSet<>();
+//    @OneToMany(mappedBy = "categorias", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JsonIgnoreProperties("categorias")
+//    @ToString.Exclude
+//    private Set<Carro> carros = new HashSet<>();
 }

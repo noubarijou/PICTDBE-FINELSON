@@ -49,8 +49,8 @@ public class Caracteristicas {
     @Size (max = 15)
     private String cor;
 
-    @OneToMany(mappedBy = "caracteristicas", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("caracteristicas")
-    @ToString.Exclude
-    private Set<Carro> carros = new HashSet<>();
+//    @OneToMany(mappedBy = "caracteristicas", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JsonIgnoreProperties("caracteristicas")
+//    @ToString.Exclude
+//    private Set<Carro> carros = new HashSet<>();
 }
