@@ -21,13 +21,13 @@ public class CategoriasService {
 
     @Transactional
     public Categorias salvar(Categorias categorias) {
-        List<Carro> carro =  categorias.getCarros()
-                .stream()
-                .map(carro1 -> carroRepository
-                        .findById(carro1.getCarro_id()).orElseThrow())
-                .collect(Collectors.toList());
-        categorias.getCarros().clear();
-        categorias.getCarros().addAll(carro);
+//        List<Carro> carro =  categorias.getCarros()
+//                .stream()
+//                .map(carro1 -> carroRepository
+//                        .findById(carro1.getCarro_id()).orElseThrow())
+//                .collect(Collectors.toList());
+//        categorias.getCarros().clear();
+//        categorias.getCarros().addAll(carro);
 
         return categoriasRepository.save(categorias);
     }

@@ -20,13 +20,13 @@ public class CaracteristicasService {
 
     @Transactional
     public Caracteristicas salvar(Caracteristicas caracteristicas) {
-        List<Carro> carro =  caracteristicas.getCarros()
-                .stream()
-                .map(carro1 -> carroRepository
-                        .findById(carro1.getCarro_id()).orElseThrow())
-                .collect(Collectors.toList());
-        caracteristicas.getCarros().clear();
-        caracteristicas.getCarros().addAll(carro);
+//        List<Carro> carro =  caracteristicas.getCarros()
+//                .stream()
+//                .map(carro1 -> carroRepository
+//                        .findById(carro1.getCarro_id()).orElseThrow())
+//                .collect(Collectors.toList());
+//        caracteristicas.getCarros().clear();
+//        caracteristicas.getCarros().addAll(carro);
 
         return caracteristicasRepository.save(caracteristicas);
     }

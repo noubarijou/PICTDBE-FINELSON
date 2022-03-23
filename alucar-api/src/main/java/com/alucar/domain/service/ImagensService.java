@@ -20,13 +20,13 @@ public class ImagensService {
 
     @Transactional
     public Imagens salvar(Imagens imagens) {
-        List<Carro> carro =  imagens.getCarros()
-                .stream()
-                .map(imagem -> carroRepository
-                        .findById(imagem.getCarro_id()).orElseThrow())
-                .collect(Collectors.toList());
-        imagens.getCarros().clear();
-        imagens.getCarros().addAll(carro);
+//        List<Carro> carro =  imagens.getCarros()
+//                .stream()
+//                .map(imagem -> carroRepository
+//                        .findById(imagem.getCarro_id()).orElseThrow())
+//                .collect(Collectors.toList());
+//        imagens.getCarros().clear();
+//        imagens.getCarros().addAll(carro);
 
         return imagensRepository.save(imagens);
     }
