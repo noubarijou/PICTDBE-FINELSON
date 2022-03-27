@@ -1,16 +1,15 @@
 package com.alucar.domain.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.HashSet;
-import java.util.Set;
+
 
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -22,20 +21,22 @@ public class Caracteristicas {
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer caracteristicas_id;
+    @Column(name="caracteristicas_id")
+    private Integer caracteristicasId;
 
+    @Column(name="qtde_porta")
+    private int qtdePorta;
 
-    private int qtde_porta;
+    @Column(name="qtde_assento")
+    private int qtdeAssento;
 
-
-    private int qtde_assento;
-
-
-    private int ar_condicionado;
+    @Column(name="ar_condicionado")
+    private int arCondicionado;
 
     @NotBlank
     @Size (max = 10)
-    private String tipo_combustivel;
+    @Column(name="tipo_combustivel")
+    private String tipoCombustivel;
 
     @NotBlank
     @Size (max = 15)
@@ -49,8 +50,6 @@ public class Caracteristicas {
     @Size (max = 15)
     private String cor;
 
-//    @OneToMany(mappedBy = "caracteristicas", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JsonIgnoreProperties("caracteristicas")
-//    @ToString.Exclude
-//    private Set<Carro> carros = new HashSet<>();
+
+
 }

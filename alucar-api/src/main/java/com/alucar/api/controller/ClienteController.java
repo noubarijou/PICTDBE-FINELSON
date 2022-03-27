@@ -54,7 +54,7 @@ public class ClienteController {
             return  ResponseEntity.notFound().build();
         }
 
-        cliente.setCliente_id(clienteId); // atribui o id ao cliente, forçando a atualização do cliente e não criando um novo
+        cliente.setClienteId(clienteId); // atribui o id ao cliente, forçando a atualização do cliente e não criando um novo
         cliente = clienteService.salvar(cliente);//salva o cliente
 
         return ResponseEntity.ok(cliente); //retorna status 200 com o corpo alterado

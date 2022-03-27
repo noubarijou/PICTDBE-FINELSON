@@ -49,7 +49,7 @@ public class CaracteristicasController {
             return ResponseEntity.notFound().build();
         }
 
-        caracteristicas.setCaracteristicas_id((caracteristicasId));
+        caracteristicas.setCaracteristicasId((caracteristicasId));
         caracteristicas = caracteristicasService.salvar(caracteristicas);
 
         return ResponseEntity.ok(caracteristicas);

@@ -52,7 +52,7 @@ public class CategoriasController {
             return ResponseEntity.notFound().build();
         }
 
-        categorias.setCategorias_id(categoriasId);
+        categorias.setCategoriasId(categoriasId);
         categorias = categoriasService.salvar(categorias);
 
         return ResponseEntity.ok(categorias);

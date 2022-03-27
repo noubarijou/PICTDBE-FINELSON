@@ -5,10 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -21,11 +18,13 @@ public class Cidades {
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer cidades_id;
+    @Column(name="cidades_id")
+    private Integer cidadesId;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size(max = 30) //limita tamanho máximo de caracteres
-    private String cidades_nome;
+    @Column(name="cidades_nome")
+    private String cidadesNome;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size (max = 2) //limita tamanho máximo de caracteres

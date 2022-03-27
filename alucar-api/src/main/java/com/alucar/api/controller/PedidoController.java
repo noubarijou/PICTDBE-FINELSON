@@ -50,7 +50,7 @@ public class PedidoController {
             return ResponseEntity.notFound().build();
         }
 
-        pedido.setPedido_id(pedidoId);
+        pedido.setPedidoId(pedidoId);
         pedido = pedidoService.salvar(pedido);
 
         return ResponseEntity.ok(pedido);

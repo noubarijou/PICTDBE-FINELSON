@@ -1,8 +1,8 @@
 create table pedido (
 	pedido_id int not null AUTO_INCREMENT,
-	data_retirada datetime not null,
+	data_retirada date not null,
 	horario_retirada varchar(15) not null,
-	data_entrega datetime not null,
+	data_entrega date not null,
 	horario_entrega varchar(15) not null,
 	local_retirada varchar(60) not null,
 	local_entrega varchar(60) not null,

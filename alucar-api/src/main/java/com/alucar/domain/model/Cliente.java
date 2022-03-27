@@ -19,11 +19,13 @@ public class Cliente {
     @EqualsAndHashCode.Include // determina o campo id como fator de comparação explicitamente
     @Id //define a chave primária
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer cliente_id;
+    @Column(name="cliente_id")
+    private Integer clienteId;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size (max = 60) //limita tamanho máximo de caracteres
-    private String cliente_nome;
+    @Column(name="cliente_nome")
+    private String clienteNome;
 
     @NotBlank
     @Email // valida email válido (sintaxe correta)
@@ -36,7 +38,8 @@ public class Cliente {
 
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size (max = 10) //limita tamanhop máximo de caracteres
-    private String data_nascimento;
+    @Column(name="data_nascimento")
+    private String dataNascimento;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size (max = 15) //limita tamanhop máximo de caracteres
@@ -50,8 +53,8 @@ public class Cliente {
     @Size (max = 15) //limita tamanhop máximo de caracteres
     private String senha;
 
-//    @NotBlank
-//    @Size (max = 30)
-//    private String funcao;
+    @NotBlank
+    @Size (max = 30)
+    private String funcao;
 
 }

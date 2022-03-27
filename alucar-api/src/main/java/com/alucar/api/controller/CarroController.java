@@ -50,7 +50,7 @@ public class CarroController {
             return ResponseEntity.notFound().build();
         }
 
-        carro.setCarro_id(carroId);
+        carro.setCarroId(carroId);
         carro = carroService.salvar(carro);
 
         return ResponseEntity.ok(carro);

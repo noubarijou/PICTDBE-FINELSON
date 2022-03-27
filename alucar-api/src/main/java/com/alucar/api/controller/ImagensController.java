@@ -50,7 +50,7 @@ public class ImagensController {
             return ResponseEntity.notFound().build();
         }
 
-        imagens.setImagens_id(imagensId);
+        imagens.setImagensId(imagensId);
         imagens = imagensService.salvar(imagens);
 
         return ResponseEntity.ok(imagens);

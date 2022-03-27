@@ -8,8 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
-
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -20,29 +19,34 @@ public class Pedido {
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer pedido_id;
+    @Column(name="pedido_id")
+    private Integer pedidoId;
 
-
-    private LocalDateTime data_retirada;
+    @Column(name="data_retirada")
+    private LocalDate dataRetirada;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size(max = 15) //limita tamanhop máximo de caracteres
-    private String horario_retirada;
+    @Column(name="horario_retirada")
+    private String horarioRetirada;
 
-
-    private LocalDateTime data_entrega;
+    @Column(name="data_entrega")
+    private LocalDate dataEntrega;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size (max = 15) //limita tamanhop máximo de caracteres
-    private String horario_entrega;
+    @Column(name="horario_entrega")
+    private String horarioEntrega;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size (max = 60) //limita tamanhop máximo de caracteres
-    private String local_retirada;
+    @Column(name="local_retirada")
+    private String localRetirada;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size (max = 60) //limita tamanhop máximo de caracteres
-    private String local_entrega;
+    @Column(name="local_entrega")
+    private String localEntrega;
 
     @ManyToOne
     //@JoinColumn(name = "cliente_id") // anotação para determinar o nome da coluna no BD, caso não colocado, assumi o default ("classe"_id)

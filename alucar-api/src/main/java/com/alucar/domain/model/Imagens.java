@@ -22,7 +22,8 @@ public class Imagens {
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer imagens_id;
+    @Column(name="imagens_id")
+    private Integer imagensId;
 
     @NotBlank
     @Size(max = 60)
@@ -30,7 +31,8 @@ public class Imagens {
 
     @NotBlank
     @Size (max = 500)
-    private String url_imagem;
+    @Column(name="url_imagem")
+    private String urlImagem;
 
 //    @OneToMany(mappedBy = "imagens", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    @JsonIgnoreProperties("imagens")

@@ -50,7 +50,7 @@ public class CidadesController {
             return ResponseEntity.notFound().build();
         }
 
-        cidades.setCidades_id(cidadesId);
+        cidades.setCidadesId(cidadesId);
         cidades = cidadesService.salvar(cidades);
 
         return ResponseEntity.ok(cidades);
