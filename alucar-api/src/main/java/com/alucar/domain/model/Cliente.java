@@ -23,9 +23,14 @@ public class Cliente {
     private Integer clienteId;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
-    @Size (max = 60) //limita tamanho máximo de caracteres
+    @Size (max = 30) //limita tamanho máximo de caracteres
     @Column(name="cliente_nome")
     private String clienteNome;
+
+    @NotBlank // impede que seja passado campo em branco ou nulo
+    @Size (max = 30) //limita tamanho máximo de caracteres
+    @Column(name="cliente_sobrenome")
+    private String clienteSobrenome;
 
     @NotBlank
     @Email // valida email válido (sintaxe correta)
