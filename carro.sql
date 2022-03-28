@@ -1,0 +1,20 @@
+INSERT INTO `dbalucar`.`carro`(`carro_id`,`modelo`,`unid_disponiveis`, `valor`,`caracteristicas_id`, `categorias_id`,`imagens_id`)
+VALUES 
+(1, 'Peugeot 208', 20, 80.00, 3, 1, 2),
+(2, 'Hyundai HB20', 20, 120.00, 1, 1, 3),
+(3, 'Renault Sandero', 30, 80.00, 3, 1, 4),
+(4, 'Renault Logan', 20, 110.00, 5, 2, 6),
+(5, 'VW Voyage', 30, 125.00, 6, 2, 7),
+(6, 'Chevrolet Onix Plus', 25, 150.00, 7, 2, 8),
+(7, 'Nissan Versa', 25, 145.00, 5, 2, 9),
+(8, 'VW Up', 35, 80.00, 2, 3, 13),
+(9, 'Fiat Mobi', 30, 85.00, 2, 3, 14),
+(10, 'VW Gol', 25, 95.00, 6, 3, 15),
+(11, 'Renault Kwid', 35, 80.00, 3, 3, 17),
+(12, 'Peugeot 2008', 25, 150.00, 10, 4, 23),
+(13, 'Renault Duster', 25, 120.00, 4, 4, 24),
+(14, 'Renault Captur', 30, 170.00, 10, 4, 25),
+(15, 'VW T-Cross', 20, 160.00, 4, 4, 26),
+(16, 'Jeep Compass', 30, 175.00, 8, 4, 27),
+(17, 'Peugeot 3008', 20, 180.00, 4, 4, 28),
+(18, 'VW Tiguan 4x2', 25, 200.00, 4, 4, 29);

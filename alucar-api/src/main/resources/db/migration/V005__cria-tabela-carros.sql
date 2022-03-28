@@ -9,10 +9,14 @@ create table carro (
     imagens_id int not null,
     caracteristicas_id int not null,
 
-
     PRIMARY KEY(carro_id)
 );
 
+alter table carro add constraint fk_carro_categorias
+foreign key (categorias_id) references categorias (categorias_id);
+
+alter table carro add constraint fk_carro_imagens
+foreign key (imagens_id) references imagens (imagens_id);
 
 alter table carro add constraint fk_carro_caracteristicas
 foreign key (caracteristicas_id) references caracteristicas (caracteristicas_id);
