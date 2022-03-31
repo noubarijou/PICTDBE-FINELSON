@@ -7,7 +7,7 @@ create table cliente (
     data_nascimento varchar(10) not null,
     cpf varchar(15) not null,
     cnh varchar(20) not null,
-    senha varchar(15) not null,
+    senha varchar(100) not null,
     funcao varchar(30) not null,
 
     primary key (cliente_id)

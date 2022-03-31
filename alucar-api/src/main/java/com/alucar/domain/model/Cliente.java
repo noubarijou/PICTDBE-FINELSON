@@ -55,7 +55,7 @@ public class Cliente {
     private String cnh;
 
     @NotBlank // impede que seja passado campo em branco ou nulo
-    @Size (max = 15) //limita tamanhop máximo de caracteres
+    @Size (max = 100) //limita tamanhop máximo de caracteres
     private String senha;
 
     @NotBlank

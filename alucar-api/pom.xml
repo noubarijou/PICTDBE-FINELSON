@@ -63,6 +63,13 @@
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 
+		<!-- dependencia para validação dfe usuário e senha -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

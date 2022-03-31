@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -43,9 +44,14 @@ public class ClienteController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED) // altera o retorno do status para 201(created)
-    public Cliente adicionar (@Valid @RequestBody Cliente cliente) { //@RequestBody -> vincula o parâmetro do método à requisição, ou seja, vincula os dados inseridos à variável cliente
+    public Cliente adicionar (@Valid @RequestBody Cliente cliente) { //@RequestBody -> vincula o parâmetro do método à requisição, ou seja, vincula os dados inseridos à variável cliente, transformando o json em objeto
                                                                       //@Valid -> verifica se o campo é válido antes de fazer a requisição ao banco (testa as validações inseridas na classe Cliente)
         return clienteService.salvar(cliente); // salva e retorna os dados salvos
+    }
+
+    @GetMapping("/validarSenha")
+    public ResponseEntity<Boolean> validarSenha(String email, String senha){
+        return clienteService.validarSenha(email, senha);
     }
 
     @PutMapping("/{clienteId}")

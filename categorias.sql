@@ -1,6 +1,6 @@
-INSERT INTO `dbalucar`.`categorias`(`categorias_id`,`categorias_nome`,`url_img_modelo`, `descricao`) 
+INSERT INTO `dbalucar`.`categorias`(`categorias_id`,`categorias_nome`,`url_img_modelo`, `descricao`, `preco`) 
 VALUES 
-(1, 'Compacto', 'https://static.rentcars.com/imagens/carros/chevrolet_onix-2020-2021.png', 'Veículos de tamanho médio, viagens curtas até 4 pessoas ou longas até 3 pessoas.'), 
-(2, 'Intermediario', 'https://static.rentcars.com/imagens/carros/nissan-versa-2022.png', 'Carros maiores e com um porta-malas mais amplo do que os econômicos, para quem prefere ter um pouco mais de espaço.'),
-(3, 'Economico', 'https://static.rentcars.com/imagens/carros/volkswagen_gol-2020-2021.png', 'Automóveis de entrada, populares, com quatro portas e equipados com motores 1.0. Espaço interno para acomodar até cinco passageiros, além de comportar uma mala grande e uma mala pequena em seus porta-malas. Devido às suas características, são indicados principalmente para rodar dentro da cidade.'),
-(4, 'SUV', 'https://static.rentcars.com/imagens/carros/jeep-compass.jpg', 'Porte avantajado, interior espaçoso,possibilidade de trafegar em vários terrenos.');
+(1, "Compacto", "https://static.rentcars.com/imagens/carros/chevrolet_onix-2020-2021.png", "Veículos de tamanho médio, viagens curtas até 4 pessoas ou longas até 3 pessoas.", 80), 
+(2, "Intermediario", "https://static.rentcars.com/imagens/carros/nissan-versa-2022.png", "Carros maiores e com um porta-malas mais amplo do que os econômicos, para quem prefere ter um pouco mais de espaço.", 110),
+(3, "Economico", "https://static.rentcars.com/imagens/carros/volkswagen_gol-2020-2021.png", "Automóveis de entrada, populares, com quatro portas e equipados com motores 1.0. Espaço interno para acomodar até cinco passageiros, além de comportar uma mala grande e uma mala pequena em seus porta-malas. Devido às suas características, são indicados principalmente para rodar dentro da cidade.", 80),
+(4, "SUV", "https://static.rentcars.com/imagens/carros/jeep-compass.jpg", "Porte avantajado, interior espaçoso,possibilidade de trafegar em vários terrenos.", 120);
