@@ -16,7 +16,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/imagens")
-@CrossOrigin(origins = "*", allowedHeaders = " ")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ImagensController {
 
     @Autowired

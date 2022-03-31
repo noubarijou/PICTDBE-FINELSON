@@ -18,7 +18,7 @@ import java.util.Optional;
 @AllArgsConstructor // Gera um construtor de todos os atributos da classe
 @RestController // anotação para dizer que este arquivo é um controlador Rest
 @RequestMapping("/clientes") // mapea toda a classe para usar o caminho cliente na requisição
-@CrossOrigin(origins = "*", allowedHeaders = " ") // comando para a classe ser acessivel no front
+@CrossOrigin(origins = "*", allowedHeaders = "*") // comando para a classe ser acessivel no front
 public class ClienteController {
 
     @Autowired // injeta a instância de ClienteRepository gerenciada pelo Spring, em tempo real, não sendo necessário uma classe para essa finalidade e sim uma interface
