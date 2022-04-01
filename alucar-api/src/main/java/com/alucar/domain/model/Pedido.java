@@ -62,12 +62,14 @@ public class Pedido {
     private Integer periodo;
 
     @ManyToOne
-    //@JoinColumn(name = "cliente_id") // anotação para determinar o nome da coluna no BD, caso não colocado, assumi o default ("classe"_id)
+    @JoinColumn(name = "cliente_id") // anotação para determinar o nome da coluna no BD, caso não colocado, assumi o default ("classe_id")
     private Cliente cliente;
 
     @ManyToOne
+    @JoinColumn(name = "cidades_id")
     private Cidades cidades;
 
     @ManyToOne
+    @JoinColumn(name = "carro_id")
     private Carro carro;
 }
