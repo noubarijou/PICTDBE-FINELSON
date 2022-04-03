@@ -62,4 +62,7 @@ public class Cliente {
     @Size (max = 30)
     private String funcao;
 
+    @NotBlank
+    private boolean ativo;
+
 }

@@ -1,6 +1,6 @@
 package com.alucar.api.controller;
 
-import com.alucar.domain.model.Caracteristicas;
+import com.alucar.domain.repository.ClienteRepository;
 import com.alucar.domain.repository.CaracteristicasRepository;
 import com.alucar.domain.service.CaracteristicasService;
 import lombok.AllArgsConstructor;
