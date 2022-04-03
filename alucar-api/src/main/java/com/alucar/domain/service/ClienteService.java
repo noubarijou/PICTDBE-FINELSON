@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +23,8 @@ public class ClienteService {
 
     private ClienteRepository clienteRepository;
     @Autowired
-    private final PasswordEncoder encoder;
+    //private final PasswordEncoder encoder;
+    private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
     @Transactional // Declara que esse método é executado dentro de uma transação, caso algo de errado todas as operações feitas dentro do banco de dados é descartado
     public Cliente salvar (Cliente cliente) {
@@ -33,7 +35,8 @@ public class ClienteService {
         if(emailEmUso) { // caso emailEmUso esteja em uso (true)
             throw  new NegocioException("Já existe um cadastro com esse e-mail"); // Envias mensagem para classe NegocioException.
         }
-        cliente.setSenha(encoder.encode(cliente.getSenha())); //encripta a senha antes de salvar
+        //cliente.setSenha(encoder.encode(cliente.getSenha())); //encripta a senha antes de salvar
+        String encodedPassword = encoder.encode(cliente.getSenha());
         return clienteRepository.save(cliente);
     }
 

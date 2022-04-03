@@ -1,13 +1,18 @@
 package com.alucar.domain.model;
 
+import jdk.jfr.Enabled;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Collection;
+import java.util.Collections;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true) // verifica a igualdade de dois objetos, com a inclusão dos parenteses, temmos a comparação através de um campo determinado deforma explicita
 @Getter
@@ -58,8 +63,31 @@ public class Cliente {
     @Size (max = 100) //limita tamanhop máximo de caracteres
     private String senha;
 
-    @NotBlank
-    @Size (max = 30)
+    @NotBlank // impede que seja passado campo em branco ou nulo
+    @Size (max = 15) //limita tamanhop máximo de caracteres
     private String funcao;
 
+//    @Override
+//    public String getPassword() { return senha; }
+//
+//    @Override
+//    public String getUsername() { return email; }
+
+//    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//        SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(funcao.name());
+//        return Collections.singletonList(grantedAuthority);
+//    }
+//
+//    @Override
+//    public boolean isAccountNonExpired() { return true; }
+//
+//    @Override
+//    public boolean isAccountNonLocked() { return true; }
+//
+//    @Override
+//    public boolean isCredentialNonExpired() { return true; }
+//
+//    @Override
+//    public boolean isEnabled() { return true; }
 }
