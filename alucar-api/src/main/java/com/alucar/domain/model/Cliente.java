@@ -1,9 +1,7 @@
 package com.alucar.domain.model;
 
 import jdk.jfr.Enabled;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -11,8 +9,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true) // verifica a igualdade de dois objetos, com a inclusão dos parenteses, temmos a comparação através de um campo determinado deforma explicita
 @Getter
@@ -63,9 +61,18 @@ public class Cliente {
     @Size (max = 100) //limita tamanhop máximo de caracteres
     private String senha;
 
-    @NotBlank // impede que seja passado campo em branco ou nulo
-    @Size (max = 15) //limita tamanhop máximo de caracteres
-    private String funcao;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "tab_user_roles", joinColums = @JoinColumn(name = "cliente_id"))
+    @Column(name = "funcao_id")
+    private List<String> funcao = new ArrayList<>();
+
+    public Cliente() { }
+
+    public Cliente(String username) {
+        this.email = username;
+    }
+
 
 //    @Override
 //    public String getPassword() { return senha; }
