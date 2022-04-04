@@ -1,6 +1,7 @@
 package com.alucar.domain.service;
 
 import ch.qos.logback.core.net.server.Client;
+import com.alucar.domain.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
@@ -39,11 +40,11 @@ import org.springframework.stereotype.Service;
 
         }
         public void signUp (SignUpForm form) {
-            Client client = new Client();
-            client.setEmail(form.getEmail());
-            client.setPassword(form.getPassword());
-            client.setName(form.getName());
-            client.setLastName(form.getLastName());
+            Cliente cliente = new Cliente();
+            cliente.setEmail(form.getEmail());
+            cliente.setSenha(form.getSenha());
+            cliente.setNome(form.getNome());
+            cliente.setSobrenome(form.getSobrenome());
         }
 
 
