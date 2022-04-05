@@ -37,20 +37,20 @@ public class Cliente {
     @Size (max = 255)
     private String email;
 
-    @NotBlank // impede que seja passado campo em branco ou nulo
+
     @Size (max = 20) //limita tamanhop máximo de caracteres
     private String telefone;
 
-    @NotBlank // impede que seja passado campo em branco ou nulo
+
     @Size (max = 10) //limita tamanhop máximo de caracteres
     @Column(name="data_nascimento")
     private String dataNascimento;
 
-    @NotBlank // impede que seja passado campo em branco ou nulo
+
     @Size (max = 15) //limita tamanhop máximo de caracteres
     private String cpf;
 
-    @NotBlank // impede que seja passado campo em branco ou nulo
+
     @Size (max = 20) //limita tamanhop máximo de caracteres
     private String cnh;
 
@@ -58,7 +58,7 @@ public class Cliente {
     @Size (max = 100) //limita tamanhop máximo de caracteres
     private String senha;
 
-    @NotBlank
+
     @Size (max = 30)
     private String funcao;
 

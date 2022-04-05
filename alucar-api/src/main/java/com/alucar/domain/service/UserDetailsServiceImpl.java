@@ -1,5 +1,6 @@
 package com.alucar.domain.service;
 
+import com.alucar.domain.data.DetalheClienteData;
 import com.alucar.domain.model.Cliente;
 import com.alucar.domain.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<Cliente> cliente = clienteRepository.findByEmail(email);
 
-        cliente.orElseThrow(()  -> new UsernameNotFoundException("Usuário não encontrado"));
+        if (cliente.isEmpty()) {
+            throw new UsernameNotFoundException("Usuário [" + email + "] não encontrado");
+        }
 
-        return cliente.map(UserDetailsImpl::new).get();
+        return new DetalheClienteData(cliente);
     }
 }
