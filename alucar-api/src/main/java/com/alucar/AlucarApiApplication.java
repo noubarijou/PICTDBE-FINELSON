@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@SpringBootApplication //(exclude = {SecurityAutoConfiguration.class}) // "exclude...." -> retira a obrigatoriedade de inserir senha para acessar a api
+@SpringBootApplication (exclude = {SecurityAutoConfiguration.class}) // "exclude...." -> retira a obrigatoriedade de inserir senha para acessar a api
 public class AlucarApiApplication {
 
 	public static void main(String[] args) {

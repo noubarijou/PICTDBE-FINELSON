@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository // define que é um repositório que gerencia a classe Cliente
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
-      Optional<Cliente> findByEmail(String email);  // consulta Cliente por email para gerar a regra em service de não permitir cadastro de email duplicado
+      public Optional<Cliente> findByEmail(String email);  // consulta Cliente por email para gerar a regra em service de não permitir cadastro de email duplicado
 }

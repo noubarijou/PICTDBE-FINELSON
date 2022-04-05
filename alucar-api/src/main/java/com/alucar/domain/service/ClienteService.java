@@ -51,12 +51,9 @@ public class ClienteService {
         return ResponseEntity.status(status).body(valid);
     }
 
-
-
     @Transactional
     public void excluir (Integer clienteId) {
         clienteRepository.deleteById(clienteId);
     }
-
 
 }
