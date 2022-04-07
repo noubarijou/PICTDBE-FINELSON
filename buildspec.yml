@@ -5,6 +5,9 @@ phases:
     runtime-versions:
       java: corretto11
       docker: 19
+  pre_build:
+    commands:
+      - cd alucar-api    
   build:
     commands:
       -mvn clean package
