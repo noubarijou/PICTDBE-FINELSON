@@ -14,7 +14,7 @@ phases:
 
 artifacts:
   files:
-    - alucar-api/target/*.jar
+    - target/*.jar
   discard-paths: yes
 
 cache:
