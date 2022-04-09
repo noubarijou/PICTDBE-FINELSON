@@ -21,7 +21,7 @@ import java.util.Date;
 
 public class JWTAutenticarFiltro extends UsernamePasswordAuthenticationFilter {
 
-    public static final int TOKEN_EXPIRACAO = 3_600_000;   //60 minutos
+    public static final int TOKEN_EXPIRACAO = 3600000;
 
     public static final String TOKEN_SENHA = "2c92dd70-ae49-4503-b813-43d1b98f4d99"; // senha gerada no site "https://guidgenerator.com/"
 

@@ -37,40 +37,40 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
 
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
 
-                .antMatchers(HttpMethod.GET, "/carro").permitAll()
-                .antMatchers(HttpMethod.POST, "/carro").permitAll()
-                .antMatchers(HttpMethod.PUT, "/carro").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/carro").permitAll()
-
-                .antMatchers(HttpMethod.GET, "/pedido").permitAll()
-                .antMatchers(HttpMethod.POST, "/pedido").permitAll()
-                .antMatchers(HttpMethod.PUT, "/pedido").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/pedido").permitAll()
-
+//                .antMatchers(HttpMethod.GET, "/carro").permitAll()
+//                .antMatchers(HttpMethod.POST, "/carro").permitAll()
+//                .antMatchers(HttpMethod.PUT, "/carro").permitAll()
+//                .antMatchers(HttpMethod.DELETE, "/carro").permitAll()
+//
+//                .antMatchers(HttpMethod.GET, "/pedido").permitAll()
+//                .antMatchers(HttpMethod.POST, "/pedido").permitAll()
+//                .antMatchers(HttpMethod.PUT, "/pedido").permitAll()
+//                .antMatchers(HttpMethod.DELETE, "/pedido").permitAll()
+//
                 .antMatchers(HttpMethod.GET, "/clientes").permitAll()
                 .antMatchers(HttpMethod.POST, "/clientes").permitAll()
                 .antMatchers(HttpMethod.PUT, "/clientes").permitAll()
                 .antMatchers(HttpMethod.DELETE, "/clientes").permitAll()
-
-                .antMatchers(HttpMethod.GET, "/imagens").permitAll()
-                .antMatchers(HttpMethod.POST, "/imagens").permitAll()
-                .antMatchers(HttpMethod.PUT, "/imagens").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/imagens").permitAll()
-
-                .antMatchers(HttpMethod.GET, "/caracteristicas").permitAll()
-                .antMatchers(HttpMethod.POST, "/caracteristicas").permitAll()
-                .antMatchers(HttpMethod.PUT, "/caracteristicas").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/caracteristicas").permitAll()
-
-                .antMatchers(HttpMethod.GET, "/categorias").permitAll()
-                .antMatchers(HttpMethod.POST, "/categorias").permitAll()
-                .antMatchers(HttpMethod.PUT, "/categorias").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/categorias").permitAll()
-
-                .antMatchers(HttpMethod.POST, "/cidades").permitAll()
-                .antMatchers(HttpMethod.GET, "/cidades").permitAll()
-                .antMatchers(HttpMethod.PUT, "/cidades").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/cidades").permitAll()
+//
+//                .antMatchers(HttpMethod.GET, "/imagens").permitAll()
+//                .antMatchers(HttpMethod.POST, "/imagens").permitAll()
+//                .antMatchers(HttpMethod.PUT, "/imagens").permitAll()
+//                .antMatchers(HttpMethod.DELETE, "/imagens").permitAll()
+//
+//                .antMatchers(HttpMethod.GET, "/caracteristicas").permitAll()
+//                .antMatchers(HttpMethod.POST, "/caracteristicas").permitAll()
+//                .antMatchers(HttpMethod.PUT, "/caracteristicas").permitAll()
+//                .antMatchers(HttpMethod.DELETE, "/caracteristicas").permitAll()
+//
+//                .antMatchers(HttpMethod.GET, "/categorias").permitAll()
+//                .antMatchers(HttpMethod.POST, "/categorias").permitAll()
+//                .antMatchers(HttpMethod.PUT, "/categorias").permitAll()
+//                .antMatchers(HttpMethod.DELETE, "/categorias").permitAll()
+//
+//                .antMatchers(HttpMethod.POST, "/cidades").permitAll()
+//                .antMatchers(HttpMethod.GET, "/cidades").permitAll()
+//                .antMatchers(HttpMethod.PUT, "/cidades").permitAll()
+//                .antMatchers(HttpMethod.DELETE, "/cidades").permitAll()
 
                 .anyRequest().authenticated()
                 .and()
