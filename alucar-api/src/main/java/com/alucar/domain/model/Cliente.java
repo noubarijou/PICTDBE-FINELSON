@@ -58,7 +58,6 @@ public class Cliente {
     @Size (max = 100) //limita tamanhop máximo de caracteres
     private String senha;
 
-
     @Size (max = 30)
     private String funcao;
 
