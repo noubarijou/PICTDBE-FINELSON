@@ -9,6 +9,7 @@ create table cliente (
     cnh varchar(20) not null,
     senha varchar(100) not null,
     funcao varchar(30) not null,
+    ativo tinyint not null,
 
     primary key (cliente_id)
 );

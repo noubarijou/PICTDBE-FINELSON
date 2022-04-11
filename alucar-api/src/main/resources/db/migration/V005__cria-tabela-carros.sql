@@ -5,9 +5,9 @@ create table carro (
     placa VARCHAR(7) not null,
     rating int not null,
     unid_disponiveis int not null,
-    categorias_id int not null,
-    imagens_id int not null,
-    caracteristicas_id int not null,
+    categorias_id int,
+    imagens_id int,
+    caracteristicas_id int,
 
     PRIMARY KEY(carro_id)
 );
