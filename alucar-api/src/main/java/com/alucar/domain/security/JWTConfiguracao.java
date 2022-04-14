@@ -9,19 +9,23 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+
+
+
 @EnableWebSecurity
 public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
 
-    private final UserDetailsServiceImpl clienteService;
-    private final PasswordEncoder passwordEncoder;
+    private final UserDetailsService clienteService;
+    private PasswordEncoder passwordEncoder;
 
 
-    public JWTConfiguracao(UserDetailsServiceImpl clienteService, PasswordEncoder passwordEncoder) {
+    public JWTConfiguracao(UserDetailsService clienteService, PasswordEncoder passwordEncoder) {
         this.clienteService = clienteService;
         this.passwordEncoder = passwordEncoder;
     }
@@ -36,6 +40,8 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
         http.csrf().disable().authorizeRequests()
 
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
+                .antMatchers(HttpMethod.POST, "/cadastrar").permitAll()
+
 
 //                .antMatchers(HttpMethod.GET, "/carro").permitAll()
 //                .antMatchers(HttpMethod.POST, "/carro").permitAll()
@@ -47,10 +53,10 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
 //                .antMatchers(HttpMethod.PUT, "/pedido").permitAll()
 //                .antMatchers(HttpMethod.DELETE, "/pedido").permitAll()
 //
-                .antMatchers(HttpMethod.GET, "/clientes").permitAll()
-                .antMatchers(HttpMethod.POST, "/clientes").permitAll()
-                .antMatchers(HttpMethod.PUT, "/clientes").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/clientes").permitAll()
+//                .antMatchers(HttpMethod.GET, "/clientes").permitAll()
+//                .antMatchers(HttpMethod.POST, "/clientes").permitAll()
+//                .antMatchers(HttpMethod.PUT, "/clientes").permitAll()
+//                .antMatchers(HttpMethod.DELETE, "/clientes").permitAll()
 //
 //                .antMatchers(HttpMethod.GET, "/imagens").permitAll()
 //                .antMatchers(HttpMethod.POST, "/imagens").permitAll()
@@ -88,6 +94,4 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
 
             return source;
         }
-
-
 }

@@ -23,9 +23,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         this.clienteRepository = clienteRepository;
     }
 
-    @Autowired
-    private ClienteService clienteService;
-
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<Cliente> cliente = clienteRepository.findByEmail(email);

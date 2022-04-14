@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
@@ -22,7 +21,7 @@ public class ClienteService {
 
     private ClienteRepository clienteRepository;
     @Autowired
-    private final PasswordEncoder encoder;
+    private PasswordEncoder encoder;
 
     @Transactional // Declara que esse método é executado dentro de uma transação, caso algo de errado todas as operações feitas dentro do banco de dados é descartado
     public Cliente salvar (Cliente cliente) {
