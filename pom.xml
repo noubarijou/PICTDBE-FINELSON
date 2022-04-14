@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dh.alucar</groupId>
-	<artifactId>alucar-api</artifactId>
+	<artifactId>PICTDBE-FINAL</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>alucar-api</name>
+	<name>PICTDBE-FINAL</name>
 	<description>API da Alucar</description>
 	<properties>
 		<java.version>11</java.version>
