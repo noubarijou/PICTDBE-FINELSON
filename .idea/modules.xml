@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/PICTDBE-FINAL.iml" filepath="$PROJECT_DIR$/PICTDBE-FINAL.iml" />
       <module fileurl="file://$PROJECT_DIR$/alucar-api/alucar-api.iml" filepath="$PROJECT_DIR$/alucar-api/alucar-api.iml" />
     </modules>
   </component>
