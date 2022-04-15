@@ -15,7 +15,7 @@ public class AlucarApiApplication {
 	}
 
 
-	
+
 //	@Bean //compomente para encriptamento de senha.
 //	public PasswordEncoder getPasswordEncoder() {
 //		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
