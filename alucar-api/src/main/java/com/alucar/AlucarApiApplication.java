@@ -14,6 +14,8 @@ public class AlucarApiApplication {
 		SpringApplication.run(AlucarApiApplication.class, args);
 	}
 
+
+	
 //	@Bean //compomente para encriptamento de senha.
 //	public PasswordEncoder getPasswordEncoder() {
 //		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
