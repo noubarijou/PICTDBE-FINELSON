@@ -29,4 +29,7 @@ public class Cidades {
     @NotBlank // impede que seja passado campo em branco ou nulo
     @Size (max = 2) //limita tamanho máximo de caracteres
     private String estado;
+
+    @NotBlank
+    private String regiao;
 }

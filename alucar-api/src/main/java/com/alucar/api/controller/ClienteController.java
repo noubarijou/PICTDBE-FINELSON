@@ -42,7 +42,7 @@ public class ClienteController {
         // ResponseEntity ->  manipula a resposta retornada ao cliente, podendo ser manipulada de várias maneiras
     }
 
-    @PostMapping
+    @PostMapping("/cadastrar")
     @ResponseStatus(HttpStatus.CREATED) // altera o retorno do status para 201(created)
     public Cliente adicionar (@Valid @RequestBody Cliente cliente) { //@RequestBody -> vincula o parâmetro do método à requisição, ou seja, vincula os dados inseridos à variável cliente, transformando o json em objeto
                                                                       //@Valid -> verifica se o campo é válido antes de fazer a requisição ao banco (testa as validações inseridas na classe Cliente)
@@ -54,14 +54,14 @@ public class ClienteController {
         return clienteService.validarSenha(email, senha);
     }
 
-    @PutMapping("/{clienteId}")
+    @PutMapping("/atualizar/{clienteId}")
     public ResponseEntity<Cliente> atualizar (@PathVariable Integer clienteId, @Valid @RequestBody Cliente cliente) { // clienteId recebe a variável da url, cliente recebe os dados do corpo
         if (!clienteRepository.existsById(clienteId)) { //se o id do cliente não existir...
             return  ResponseEntity.notFound().build();
         }
 
         cliente.setClienteId(clienteId); // atribui o id ao cliente, forçando a atualização do cliente e não criando um novo
-        cliente = clienteService.salvar(cliente);//salva o cliente
+        cliente = clienteService.atualizar(cliente);//salva o cliente
 
         return ResponseEntity.ok(cliente); //retorna status 200 com o corpo alterado
     }

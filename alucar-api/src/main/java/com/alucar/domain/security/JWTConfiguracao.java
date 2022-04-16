@@ -1,9 +1,12 @@
 package com.alucar.domain.security;
 
 
+import com.alucar.domain.model.Cliente;
+import com.alucar.domain.model.Funcao;
 import com.alucar.domain.service.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
+import org.springframework.jdbc.support.incrementer.AbstractDataFieldMaxValueIncrementer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -13,6 +16,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import static com.alucar.domain.model.Funcao.ADMIN;
 
 @EnableWebSecurity
 public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
@@ -33,46 +38,27 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
+
         http.csrf().disable().authorizeRequests()
 
-                .antMatchers(HttpMethod.POST, "/login").permitAll()
+                .antMatchers("/login/**").permitAll()
+                .antMatchers( "/clientes/cadastrar/**").permitAll()
+                .antMatchers( "/clientes/atualizar/**").permitAll()
 
-                .antMatchers(HttpMethod.GET, "/carro").permitAll()
-                .antMatchers(HttpMethod.POST, "/carro").permitAll()
-                .antMatchers(HttpMethod.PUT, "/carro").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/carro").permitAll()
+                .antMatchers(HttpMethod.GET, "/**").permitAll()
+//                .antMatchers(HttpMethod.GET, "/carro").permitAll()
+//                .antMatchers(HttpMethod.GET, "/clientes").permitAll()
+//                .antMatchers(HttpMethod.GET, "/produto/id/{id}").permitAll()
+//                .antMatchers(HttpMethod.GET, "/imagem").permitAll()
+//                .antMatchers(HttpMethod.GET, "/imagem/produto/{id}").permitAll()
+//                .antMatchers(HttpMethod.GET, "/categoria").permitAll()
+//                .antMatchers(HttpMethod.GET, "/cidade").permitAll()
+//                .antMatchers(HttpMethod.GET, "/reserva/{id}").permitAll()
+//                .antMatchers(HttpMethod.GET, "/detalhes").permitAll()
+//                .antMatchers(HttpMethod.GET, "/reserva").permitAll()
 
-                .antMatchers(HttpMethod.GET, "/pedido").permitAll()
-                .antMatchers(HttpMethod.POST, "/pedido").permitAll()
-                .antMatchers(HttpMethod.PUT, "/pedido").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/pedido").permitAll()
-
-                .antMatchers(HttpMethod.GET, "/clientes").permitAll()
-                .antMatchers(HttpMethod.POST, "/clientes").permitAll()
-                .antMatchers(HttpMethod.PUT, "/clientes").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/clientes").permitAll()
-
-                .antMatchers(HttpMethod.GET, "/imagens").permitAll()
-                .antMatchers(HttpMethod.POST, "/imagens").permitAll()
-                .antMatchers(HttpMethod.PUT, "/imagens").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/imagens").permitAll()
-
-                .antMatchers(HttpMethod.GET, "/caracteristicas").permitAll()
-                .antMatchers(HttpMethod.POST, "/caracteristicas").permitAll()
-                .antMatchers(HttpMethod.PUT, "/caracteristicas").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/caracteristicas").permitAll()
-
-                .antMatchers(HttpMethod.GET, "/categorias").permitAll()
-                .antMatchers(HttpMethod.POST, "/categorias").permitAll()
-                .antMatchers(HttpMethod.PUT, "/categorias").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/categorias").permitAll()
-
-                .antMatchers(HttpMethod.POST, "/cidades").permitAll()
-                .antMatchers(HttpMethod.GET, "/cidades").permitAll()
-                .antMatchers(HttpMethod.PUT, "/cidades").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/cidades").permitAll()
-
-                .anyRequest().authenticated()
+                .anyRequest().hasAnyAuthority()
                 .and()
                 .addFilter(new JWTAutenticarFiltro(authenticationManager()))
                 .addFilter(new JWTValidarFiltro(authenticationManager()))

@@ -10,6 +10,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import static com.alucar.domain.model.Funcao.CLIENTE;
+
 @EqualsAndHashCode(onlyExplicitlyIncluded = true) // verifica a igualdade de dois objetos, com a inclusão dos parenteses, temmos a comparação através de um campo determinado deforma explicita
 @Data // gera Getter Setter ToString e Hashcodes
 @Entity // define a classe como uma entidade, ou seja, uma tabela no banco de dados
@@ -58,9 +60,8 @@ public class Cliente {
     @Size (max = 100) //limita tamanhop máximo de caracteres
     private String senha;
 
-
-    @Size (max = 30)
-    private String funcao;
+    @Enumerated(EnumType.STRING)
+    private Funcao funcao = CLIENTE;
 
     private boolean ativo;
 

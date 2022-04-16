@@ -37,6 +37,11 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
+    @Transactional // Declara que esse método é executado dentro de uma transação, caso algo de errado todas as operações feitas dentro do banco de dados é descartado
+    public Cliente atualizar (Cliente cliente) {
+        return clienteRepository.save(cliente);
+    }
+
     public ResponseEntity<Boolean> validarSenha(@RequestParam String email,
                                                 @RequestParam String senha) {
         Optional<Cliente> optCliente = clienteRepository.findByEmail(email);

@@ -1,4 +1,6 @@
 package com.alucar.domain.model;
 
-public class Funcao {
+public enum Funcao {
+
+    CLIENTE, ADMIN
 }
