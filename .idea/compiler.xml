@@ -10,9 +10,13 @@
         <module name="alucar-api" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="alucar-api" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="PICTDBE-FINAL" options="-parameters" />
       <module name="alucar-api" options="-parameters" />
     </option>
   </component>
