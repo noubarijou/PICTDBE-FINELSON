@@ -2,6 +2,7 @@ package com.alucar.domain.security;
 
 import com.alucar.domain.data.DetalheClienteData;
 import com.alucar.domain.model.Cliente;
+import com.alucar.domain.model.Funcao;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -64,6 +65,7 @@ public class JWTAutenticarFiltro extends UsernamePasswordAuthenticationFilter {
                 .sign(Algorithm.HMAC512(TOKEN_SENHA));
 
         response.getWriter().write(token);
+        response.getWriter().write(cliente.);
         response.getWriter().flush();
     }
 }

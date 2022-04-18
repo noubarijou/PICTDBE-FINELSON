@@ -27,14 +27,11 @@ public class ClienteController {
     private ClienteService clienteService;
 
     @GetMapping
-    public List<Cliente> listar() {
-        return clienteRepository.findAll(); // o método findAll só é possível por conta do JpaRepository extendido pela interface ClienteRepository
-    }
+    public List<Cliente> listar() { return clienteRepository.findAll(); } // o método findAll só é possível por conta do JpaRepository extendido pela interface ClienteRepository
 
     @GetMapping("/{clienteId}")
     public ResponseEntity<Cliente> buscar(@PathVariable Integer clienteId) {  //@PathVariable -> vincula a variável da linha 28 à variável da linha 29
         Optional<Cliente> cliente = clienteRepository.findById(clienteId); //retorna um container optional que pode ter algo ou pode estar vazio
-
             if (cliente.isPresent()) {
                 return ResponseEntity.ok(cliente.get()); // .ok -> retorna código 200
             }

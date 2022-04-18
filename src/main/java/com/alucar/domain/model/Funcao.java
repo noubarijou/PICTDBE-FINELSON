@@ -2,5 +2,5 @@ package com.alucar.domain.model;
 
 public enum Funcao {
 
-    CLIENTE, ADMIN
+    CLIENTE, MODERADOR, ADMIN
 }

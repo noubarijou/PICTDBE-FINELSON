@@ -2,15 +2,11 @@ package com.alucar.domain.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-
 import static com.alucar.domain.model.Funcao.CLIENTE;
+
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true) // verifica a igualdade de dois objetos, com a inclusão dos parenteses, temmos a comparação através de um campo determinado deforma explicita
 @Data // gera Getter Setter ToString e Hashcodes
@@ -63,6 +59,6 @@ public class Cliente {
     @Enumerated(EnumType.STRING)
     private Funcao funcao = CLIENTE;
 
-    private boolean ativo;
+    private boolean ativo = true;
 
 }
