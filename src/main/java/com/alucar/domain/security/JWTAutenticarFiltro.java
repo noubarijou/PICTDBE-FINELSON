@@ -68,6 +68,5 @@ public class JWTAutenticarFiltro extends UsernamePasswordAuthenticationFilter {
 
         response.getWriter().write(token);
         response.getWriter().flush();
-        
     }
 }
